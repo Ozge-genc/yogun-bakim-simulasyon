@@ -6,7 +6,7 @@ Bu proje, **Benzetim Programları** dersi kapsamında geliştirilmiş, karmaşı
 ## Proje Ekibi
 * Özge GENÇ- 22430070031 
 * Halil İbrahim Kalabalık- 22430070045 
-* Ayşenur ER - [Numarası] 
+* Ayşenur ER - 23430070070
 
 ## Proje Yapısı ve Modüller
 
