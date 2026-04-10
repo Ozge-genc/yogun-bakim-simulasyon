@@ -1,17 +1,36 @@
-# 🏥 Yoğun Bakım Ünitesi Kapasite ve Yatış Süresi Simülasyonu
+# Yoğun Bakım Ünitesi (YBÜ) Entegre Yönetim Simülasyonu
 
-Bu proje, "Benzetim Programları" dersi (Vize Projesi) kapsamında Python ile geliştirilmiş bir ayrık olay simülasyonu modelidir. 
+Bu proje, **Benzetim Programları** dersi kapsamında geliştirilmiş, karmaşık bir hastane ekosistemini modelleyen kapsamlı bir ayrık olay simülasyonu (Discrete Event Simulation) çalışmasıdır. 
 
-## Proje Hakkında
-Hastanelerin yoğun bakım ünitelerindeki yatak kapasitelerinin yeterliliğini, kuyruk (bekleme) sürelerini ve hastaların yatış sürelerini analiz etmek amacıyla geliştirilmiştir. Sistemdeki darboğazların tespiti için dinamik ve interaktif bir Streamlit web arayüzü tasarlanmıştır.
 
-## Kullanılan Teknolojiler ve Dağılımlar
-* **SimPy:** Simülasyon motoru ve kaynak/kuyruk yönetimi
-* **Streamlit, Pandas, Matplotlib:** Web arayüzü (UI), veri analizi ve görselleştirme
-* **Üstel Dağılım (Exponential):** Hastaların geliş aralıkları için kullanılmıştır.
-* **Normal Dağılım:** Hastaların yatış süreleri (LOS) için kullanılmıştır.
+## Proje Ekibi
+* Özge GENÇ- 22430070031 
+* Halil İbrahim Kalabalık- 22430070045 
+* Ayşenur ER - [Numarası] 
 
-## Kurulum
-Bu projeyi kendi bilgisayarınızda çalıştırmak için:
-1. Gerekli kütüphaneleri yükleyin: `pip install streamlit simpy pandas matplotlib`
-2. Uygulamayı başlatın: `python -m streamlit run app.py`
+## Proje Yapısı ve Modüller
+
+Proje, bağımsız çalışabilen modüllerden ve bunların birleştiği ana simülasyondan oluşmaktadır:
+
+1. **Modül 1: Triage (Öncelikli Hasta) Sistemi (`modul1_triage.py`)**
+   - Hastalar Kırmızı, Sarı ve Yeşil kodlarla sisteme girer.
+   - `PriorityResource` kullanılarak Kırmızı kodlu (kritik) hastaların yatak sırasında en öne geçmesi sağlanır.
+
+2. **Modül 2: İnsan Kaynakları & Bed Blocking (`insan_kaynaklari.py`)**
+   - Sadece yatak değil; Doktor ve Hemşire kısıtları simüle edilir.
+   - Hastaların iyileşmesine rağmen normal serviste yer bulamadığı için YBÜ yatağını işgal ettiği "Bed Blocking" süreci modellenir.
+
+3. **Modül 3: Finansal Analiz Paneli (`modul3_finans.py`)**
+   - Sabit yatak maliyetleri, hasta başı gelirler ve bekleme süresinden kaynaklanan fırsat maliyetleri hesaplanır.
+
+4. **Ana Entegrasyon (`final_projesi.py`)**
+   - Tüm bu modüllerin eşzamanlı çalıştığı, kapsamlı bir yönetim paneli sunar.
+
+##  Kurulum ve Çalıştırma
+
+Projeyi yerel makinenizde çalıştırmak için:
+
+1. Depoyu indirin veya klonlayın.
+2. Gerekli kütüphaneleri yükleyin:
+   ```bash
+   pip install streamlit simpy pandas matplotlib
